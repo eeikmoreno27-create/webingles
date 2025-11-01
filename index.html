@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inglés para Todos — Plataforma</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app" class="container">
+    <header class="header card">
+      <h1>Inglés para Todos — Gratis</h1>
+      <nav>
+        <button id="btn-home">Inicio</button>
+        <button id="btn-dashboard">Mi Progreso</button>
+        <span id="auth-area"></span>
+      </nav>
+    </header>
+
+    <main id="main" class="main">
+      <!-- Home view -->
+      <section id="view-home" class="view">
+        <div class="grid" id="courses-list"></div>
+        <aside id="side-panel" class="card">
+          <h2>Bienvenido</h2>
+          <p>Aprende desde 0 hasta avanzado. Regístrate para guardar tu progreso.</p>
+          <div id="auth-panel"></div>
+          <hr />
+          <div id="remote-config">
+            <label>URL JSON de ejercicios remotos (opcional):</label>
+            <input id="remote-url" placeholder="https://raw.githubusercontent.com/usuario/repo/main/lessons.json" />
+            <button id="btn-load-remote" class="primary">Cargar</button>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Dashboard -->
+      <section id="view-dashboard" class="view hidden">
+        <h2>Mi progreso</h2>
+        <div id="progress-list"></div>
+        <button id="btn-back-dashboard" class="ghost">← Volver</button>
+      </section>
+
+      <!-- Lesson -->
+      <section id="view-lesson" class="view hidden">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <h2 id="lesson-title"></h2>
+              <p id="lesson-text" class="muted"></p>
+            </div>
+            <div>
+              <button id="btn-back-lesson" class="ghost">← Volver</button>
+            </div>
+          </div>
+
+          <div class="cols" style="margin-top:12px;">
+            <div>
+              <h3>Practicar pronunciación</h3>
+              <div id="speech-practice"></div>
+              <div id="last-score" style="margin-top:8px"></div>
+              <button id="btn-listen" class="ghost" style="margin-top:8px">Escuchar modelo</button>
+            </div>
+
+            <div>
+              <h3>Conversar (práctica)</h3>
+              <div id="chat-area" class="chat-area"></div>
+              <div class="chat-controls" style="margin-top:8px">
+                <button id="btn-start-speak" class="ghost">Hablar</button>
+                <input id="chat-input" placeholder="Escribe si prefieres..." />
+                <button id="btn-send-text" class="primary">Enviar</button>
+              </div>
+
+              <h4 style="margin-top:12px">Notas</h4>
+              <textarea id="notes" rows="6" placeholder="Tus notas..."></textarea>
+              <div style="margin-top:8px">
+                <button id="btn-save-notes" class="primary">Guardar notas</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Plataforma gratuita · Comparte · Host en GitHub</small>
+    </footer>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
